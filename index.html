@@ -3,7 +3,6 @@
 <head>
     <title>Be My Valentine ❤️</title>
 
-    <!-- Makes the page scale correctly on mobile -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <style>
@@ -13,9 +12,9 @@
             background-color: #ffe6ea;
             padding: 20px;
             margin: 0;
+            animation: fadeIn 1s ease-in;
         }
 
-        /* Keeps everything centered and not too narrow on desktop */
         .container {
             max-width: 700px;
             margin: auto;
@@ -24,6 +23,7 @@
         h1 {
             color: #d6336c;
             font-size: 40px;
+            animation: fadeIn 1.2s ease-in;
         }
 
         .btn {
@@ -33,6 +33,15 @@
             border: none;
             border-radius: 10px;
             cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .yes:hover {
+            transform: scale(1.15);
+        }
+
+        .no:active {
+            animation: shake 0.3s;
         }
 
         .yes {
@@ -47,8 +56,9 @@
 
         img {
             width: 100%;
-            max-width: 250px; /* keeps them from getting too big */
+            max-width: 250px;
             border-radius: 15px;
+            animation: heartbeat 2s infinite;
         }
 
         .image-row {
@@ -56,8 +66,30 @@
             justify-content: center;
             align-items: center;
             gap: 20px;
-            flex-wrap: wrap; /* allows stacking on very small screens */
+            flex-wrap: wrap;
             margin-bottom: 20px;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            25% { transform: scale(1.05); }
+            40% { transform: scale(0.97); }
+            60% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes shake {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            50% { transform: translateX(5px); }
+            75% { transform: translateX(-5px); }
+            100% { transform: translateX(0); }
         }
     </style>
 </head>
@@ -81,11 +113,11 @@
 <script>
     function yesAnswer() {
         document.body.innerHTML = `
-            <div class="container">
+            <div class="container" style="animation: fadeIn 1s ease-in;">
                 <h1>Yay!!! ❤️🥰</h1>
                 <p>I love you baby! There's something for you at the door❤️.</p>
-                <img src="https://raw.githubusercontent.com/jlin70000/Fun-exercises/main/IMG_2894.JPG" 
-                     style="max-width:300px; width:100%; border-radius:15px;">
+                <img src="https://raw.githubusercontent.com/jlin70000/Fun-exercises/main/IMG_2894.JPG"
+                     style="max-width:300px; width:100%; border-radius:15px; animation: heartbeat 2s infinite;">
             </div>
         `;
     }
