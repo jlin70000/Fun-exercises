@@ -37,6 +37,15 @@
         img {
             width: 250px;
             border-radius: 15px;
+            margin: 10px;
+        }
+
+        /* NEW: container to place images side by side */
+        .image-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
             margin-bottom: 20px;
         }
     </style>
@@ -44,7 +53,11 @@
 
 <body>
 
-    <img src="https://i.imgur.com/3ZQ3Z4F.png" alt="Cute Valentine Image">
+    <!-- Two images side by side -->
+    <div class="image-row">
+        <img src="https://raw.githubusercontent.com/jlin70000/Fun-exercises/main/IMG_0702.jpeg" alt="Cute Valentine Image">
+        <img src="https://raw.githubusercontent.com/jlin70000/Fun-exercises/main/IMG_0717.jpeg" alt="Second Cute Image">
+    </div>
 
     <h1>Will you be my Valentine? ❤️</h1>
 
@@ -55,8 +68,8 @@
         function yesAnswer() {
             document.body.innerHTML = `
                 <h1>Yay!!! ❤️🥰</h1>
-                <p>You just made my day.</p>
-                <img src="https://i.imgur.com/8QfQ7QF.png" alt="Happy Image">
+                <p>I love you baby! There's something for you at the door❤️.</p>
+                <img src="https://raw.githubusercontent.com/jlin70000/Fun-exercises/main/IMG_2894.JPG" alt="Happy Image">
             `;
         }
 
